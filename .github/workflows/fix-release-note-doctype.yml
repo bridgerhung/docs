@@ -1,0 +1,40 @@
+name: Fix release note doctype
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/fix-release-note-doctype.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clean up release note
+        run: python scripts/fix_release_note_doctype.py
+
+      - name: Remove one-time cleanup files
+        run: |
+          rm -f scripts/fix_release_note_doctype.py
+          rm -f .github/workflows/fix-release-note-doctype.yml
+
+      - name: Commit cleanup
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "fix: clean restored release note markup"
+          git push
