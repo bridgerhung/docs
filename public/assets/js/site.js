@@ -42,7 +42,16 @@
       .docs-global-dialog__wrap{position:relative;max-height:96vh;overflow:auto}
       .docs-global-dialog__image{display:block;width:100%;height:auto}
       .docs-global-dialog__close{position:sticky;top:12px;z-index:3;float:right;margin:12px 12px -50px 0;padding:8px 13px;border:1px solid #c8d4cf;border-radius:999px;background:rgba(255,255,255,.96);color:#2a3d43;font-weight:800;cursor:pointer}
-      @media(max-width:720px){.docs-navbar__inner{min-height:56px;gap:12px}.docs-navbar__brand{font-size:13px}.docs-navbar__link{padding:7px 10px;font-size:13px}}
+      #research .project-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;margin:20px 0 0;padding:18px;border:1px solid #d9e2de;border-radius:14px;background:#f8faf9}
+      #research .project-detail{margin:0!important;color:#40535b}
+      #research .project-detail strong{display:block;margin-bottom:4px;color:#29404a}
+      #research .project-detail--wide{grid-column:1/-1}
+      #research .open-source-statement{margin-top:24px;padding-top:24px;border-top:1px solid #d9e2de;color:#40535b}
+      #research .open-source-statement h3{margin:0 0 16px;color:#29404a;font-size:19px}
+      #research .open-source-statement p{margin:0 0 14px}
+      #research .open-source-statement a{font-weight:800;overflow-wrap:anywhere}
+      #research .project-title-en{margin:16px 0;padding:16px 18px;border-left:4px solid #1b6f58;border-radius:0 12px 12px 0;background:#f3f8f5;color:#29404a;font-weight:700;line-height:1.75}
+      @media(max-width:720px){.docs-navbar__inner{min-height:56px;gap:12px}.docs-navbar__brand{font-size:13px}.docs-navbar__link{padding:7px 10px;font-size:13px}#research .project-details{grid-template-columns:1fr}#research .project-detail--wide{grid-column:auto}}
       @media(max-width:470px){.docs-navbar__inner{width:100%;padding:0 10px;display:block}.docs-navbar__brand{display:block;padding:9px 4px 2px}.docs-navbar__links{margin:0 -2px;padding:0 0 7px}.docs-navbar__link{min-height:36px}}
       @media print{.docs-navbar,.docs-global-dialog{display:none!important}}
     `;
@@ -62,6 +71,40 @@
         if (onlyDocumentationLinks) group.remove();
       });
     }
+  };
+
+  const applyIntroductionResearchContent = () => {
+    if (currentPath !== '/introduction/') return;
+
+    const researchCard = document.querySelector('#research .project-card');
+    if (!researchCard) return;
+
+    researchCard.innerHTML = `
+      <p>本系統原始版本係於中華民國（臺灣）教育部教學實踐研究計畫支持下，為國立雲林科技大學職場英文課程所開發。</p>
+
+      <div class="project-details" aria-label="研究計畫資訊">
+        <p class="project-detail project-detail--wide"><strong>計畫名稱</strong>「AI 輔助之英文面試訓練模組 --探討其對學習者面試表現提昇與語言焦慮降低的影響」</p>
+        <p class="project-detail"><strong>計畫主持人</strong>蘇姿文（Tzu-Wen Su）</p>
+        <p class="project-detail"><strong>系統設計與開發</strong>洪名琮（Ming-Tsung Hung）</p>
+        <p class="project-detail project-detail--wide"><strong>執行學校</strong>國立雲林科技大學<br>National Yunlin University of Science and Technology</p>
+      </div>
+
+      <div class="open-source-statement" lang="en">
+        <h3>Open-source and Project Information</h3>
+        <p>For technical documentation and implementation details, please refer to the source code:</p>
+        <p><a href="https://github.com/bridgerhung/oral" target="_blank" rel="noopener noreferrer">github.com/bridgerhung/oral</a></p>
+        <p>This project is released as open-source software under the Apache License 2.0.</p>
+        <p><strong>AI English Oral Interview Practice System</strong></p>
+        <p>Copyright © 2026 Ming-Tsung Hung</p>
+        <p>This software was originally developed as part of a Teaching Practice Research Project funded by the Ministry of Education, Republic of China (Taiwan):</p>
+        <div class="project-title-en">“AI-Assisted English Interview Training Module:<br>Investigating Its Effects on Learners’ Interview Performance<br>and the Reduction of Language Anxiety”</div>
+        <p><strong>Principal Investigator:</strong><br>Tzu-Wen Su</p>
+        <p><strong>Institution:</strong><br>National Yunlin University of Science and Technology</p>
+      </div>
+    `;
+
+    const footer = document.querySelector('.footer');
+    if (footer) footer.textContent = 'Copyright © 2026 洪名琮 Ming-Tsung Hung';
   };
 
   const injectNavbar = () => {
@@ -189,6 +232,7 @@
 
   injectGlobalStyles();
   removeAdHocNavigation();
+  applyIntroductionResearchContent();
   injectNavbar();
   bindImageZoom();
   bindSectionSpy();
