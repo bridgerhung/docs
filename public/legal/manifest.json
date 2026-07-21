@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-07-21T16:00:00+08:00",
+  "source_repository": "bridgerhung/docs",
+  "documents": {
+    "privacy_notice": {
+      "title": "個人資料蒐集、處理及利用告知事項",
+      "version": "2026-07-21.2",
+      "latest_url": "https://docs.oral.brid.pw/legal/privacy-notice/",
+      "version_url": "https://docs.oral.brid.pw/legal/versions/2026-07-21.2/privacy-notice/",
+      "source_commit": "a25a4583cab41f91bf5df7f24208e8b71b7c4f0d",
+      "source_path": "public/legal/privacy-notice/index.html",
+      "acknowledgement_action": "acknowledged"
+    },
+    "system_terms": {
+      "title": "AI 英語面試練習系統使用規範",
+      "version": "2026-07-21.2",
+      "latest_url": "https://docs.oral.brid.pw/legal/system-terms/",
+      "version_url": "https://docs.oral.brid.pw/legal/versions/2026-07-21.2/system-terms/",
+      "source_commit": "a25a4583cab41f91bf5df7f24208e8b71b7c4f0d",
+      "source_path": "public/legal/system-terms/index.html",
+      "acknowledgement_action": "accepted"
+    }
+  }
+}
