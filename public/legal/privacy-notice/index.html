@@ -28,7 +28,11 @@
   <script>
     (() => {
       const source = 'https://raw.githubusercontent.com/bridgerhung/docs/a25a4583cab41f91bf5df7f24208e8b71b7c4f0d/public/legal/privacy-notice/index.html';
-      const removedSentence = '部分功能亦可能要求 OpenAI 回傳字級時間資訊，以計算語速、停頓次數、停頓時間及其他口語流暢度指標。';
+      const removedSentence = [
+        '部分功能亦可能要求 OpenAI 回傳',
+        '字級時間資訊，以計算語速、',
+        '停頓次數、停頓時間及其他口語流暢度指標。'
+      ].join('');
 
       fetch(source, { cache: 'force-cache' })
         .then((response) => {
