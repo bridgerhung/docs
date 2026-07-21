@@ -21,6 +21,7 @@
     .legal-card h2{margin:0 0 10px;color:var(--heading);font-size:25px}
     .legal-card p{margin:0 0 18px;color:#5d6a70}
     .legal-card__meta{margin-top:auto;color:#315e51;font-size:13px;font-weight:800}
+    .manifest-status{margin-top:16px;color:#607078;font-size:13px;font-weight:700}
     @media(max-width:760px){.legal-grid{grid-template-columns:1fr}.legal-card{min-height:0}}
   </style>
 </head>
@@ -30,7 +31,7 @@
       <div class="hero-panel">
         <span class="badge">正式文件</span>
         <h1>使用規範與個資告知</h1>
-        <p class="subtitle">版本 2026-07-21.2｜核准版</p>
+        <p class="subtitle" id="legalVersionSummary">正在載入文件版本…</p>
         <p class="lead">請依需要閱讀系統使用規範，或個人資料蒐集、處理及利用告知事項。研究參與及研究資料利用，另以紙本研究參與者知情同意書為準。</p>
       </div>
     </div>
@@ -40,23 +41,25 @@
     <section class="section">
       <h2>文件列表</h2>
       <div class="legal-grid">
-        <a class="legal-card" href="/legal/system-terms/">
+        <a class="legal-card" data-legal-document="system_terms" href="/legal/system-terms/">
           <span class="legal-card__eyebrow">使用者行為與系統安全</span>
-          <h2>AI 英語面試練習系統使用規範</h2>
+          <h2 data-legal-title>AI 英語面試練習系統使用規範</h2>
           <p>說明帳號安全、作答與錄音內容、AI 輔助功能、禁止行為、違規處理及研究參與的獨立性。</p>
-          <span class="legal-card__meta">版本 2026-07-21.2 →</span>
+          <span class="legal-card__meta" data-legal-version>載入版本中…</span>
         </a>
-        <a class="legal-card" href="/legal/privacy-notice/">
+        <a class="legal-card" data-legal-document="privacy_notice" href="/legal/privacy-notice/">
           <span class="legal-card__eyebrow">個人資料依法告知</span>
-          <h2>個人資料蒐集、處理及利用告知事項</h2>
+          <h2 data-legal-title>個人資料蒐集、處理及利用告知事項</h2>
           <p>說明資料類別、保存期間、實際利用地區、Oracle Cloud、Cloudflare Turnstile、OpenAI API 及當事人權利。</p>
-          <span class="legal-card__meta">版本 2026-07-21.2 →</span>
+          <span class="legal-card__meta" data-legal-version>載入版本中…</span>
         </a>
       </div>
+      <p class="manifest-status" id="legalManifestStatus">正在讀取文件清單…</p>
     </section>
   </main>
 
   <footer class="footer">Copyright © 2026 洪名琮 Ming-Tsung Hung</footer>
   <script src="/assets/js/site.js"></script>
+  <script src="/legal/index.js"></script>
 </body>
 </html>
