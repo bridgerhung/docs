@@ -4,82 +4,230 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
-  <meta name="description" content="AI 英文口試練習系統介紹：從職位設定、寫作、跟讀、角色扮演到 AI 回饋與教師評分的完整流程。">
+  <meta name="description" content="AI 英語面試練習系統完整介紹：教學理念、六階段學習流程、客製化學習鷹架、三次練習、AI 回饋、教師正式評分、管理後台、研究背景與開源架構。">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="zh_TW">
-  <meta property="og:title" content="AI 英文口試練習系統｜系統介紹">
-  <meta property="og:description" content="不是只和 AI 聊一聊，而是把完整英文面試學習流程串起來。">
+  <meta property="og:title" content="AI 英語面試練習系統｜完整系統介紹">
+  <meta property="og:description" content="不是只和 AI 聊一聊，而是把職位設定、寫作、跟讀、角色扮演、AI 回饋、反思與教師評量串成可追蹤的學習歷程。">
   <meta property="og:image" content="/assets/images/ai-english-oral-interview-system-og.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI 英文口試練習系統｜系統介紹">
-  <meta name="twitter:description" content="不是只和 AI 聊一聊，而是把完整英文面試學習流程串起來。">
+  <meta name="twitter:title" content="AI 英語面試練習系統｜完整系統介紹">
+  <meta name="twitter:description" content="從教學鷹架、口語練習到教師正式評分，一套為職場英文課設計的完整學習系統。">
   <meta name="twitter:image" content="/assets/images/ai-english-oral-interview-system-og.png">
-  <title>AI 英文口試練習系統｜系統介紹</title>
+  <title>AI 英語面試練習系統｜完整系統介紹</title>
   <link rel="stylesheet" href="/assets/css/site.css">
+  <style>
+    .intro-layout{width:min(100% - 24px,1220px);margin:30px auto 72px;display:grid;grid-template-columns:240px minmax(0,1fr);gap:24px;align-items:start}
+    .intro-content{min-width:0}
+    .intro-content .section{scroll-margin-top:84px}
+    .intro-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}
+    .intro-summary .meta-card{height:100%}
+    .intro-summary .meta-card strong{font-size:15px}
+    .flow-detail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+    .flow-item{position:relative;padding:18px 18px 18px 62px;border:1px solid var(--line);border-radius:16px;background:#fff}
+    .flow-number{position:absolute;left:17px;top:18px;display:flex;width:31px;height:31px;align-items:center;justify-content:center;border-radius:50%;background:var(--primary-soft);color:var(--primary);font-size:13px;font-weight:900}
+    .flow-item strong{display:block;margin-bottom:5px;color:#29404a}
+    .flow-item p{margin:0;color:#617077;font-size:14px}
+    .attempt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:18px}
+    .attempt{padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff}
+    .attempt .attempt-label{display:inline-flex;margin-bottom:10px;padding:4px 9px;border-radius:999px;background:var(--secondary-soft);color:#245c8a;font-size:12px;font-weight:800}
+    .attempt strong{display:block;margin-bottom:6px;color:#29404a}
+    .attempt p{margin:0;color:#617077;font-size:14px}
+    .role-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+    .role-card{padding:20px;border:1px solid var(--line);border-radius:16px;background:#fff}
+    .role-card h3{margin:0 0 10px;font-size:19px}
+    .role-card ul{margin:0;padding-left:20px;color:#526168}
+    .role-card li{margin:6px 0}
+    .evidence-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}
+    .evidence-item{padding:14px 16px;border:1px solid var(--line);border-radius:13px;background:#fbfcfb;color:#40535b;font-size:14px}
+    .architecture{margin-top:18px;padding:18px 20px;border:1px solid #c9dbea;border-radius:14px;background:var(--secondary-soft);color:#314866;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;line-height:1.75;overflow-x:auto;white-space:pre}
+    .project-card{padding:22px;border:1px solid var(--line);border-radius:16px;background:#fff}
+    .project-card p:last-child{margin-bottom:0}
+    .source-note{margin-top:18px;padding:18px 20px;border-left:4px solid var(--primary);border-radius:0 13px 13px 0;background:#f7faf8;color:#425159}
+    .source-note a{font-weight:800;word-break:break-all}
+    @media(max-width:980px){.intro-layout{grid-template-columns:1fr}.intro-layout .sidebar{display:none}.intro-summary,.attempt-grid{grid-template-columns:1fr}.flow-detail,.role-grid,.evidence-list{grid-template-columns:1fr}}
+    @media(max-width:640px){.intro-layout{width:min(100% - 14px,1220px);margin-top:15px}.intro-summary{gap:10px}.architecture{font-size:12px}}
+  </style>
 </head>
 <body>
   <header class="hero">
     <div class="shell">
       <div class="hero-panel">
-        <span class="badge">系統介紹</span>
-        <h1>AI 英文口試練習系統</h1>
+        <span class="badge">完整系統介紹</span>
+        <h1>AI 英語面試練習系統</h1>
         <p class="subtitle">AI English Oral Interview Practice System</p>
-        <p class="lead">這是一套為大學生英文面試學習設計的 AI 輔助平台。它不是讓學生打開 AI 聊一聊就結束，而是把「欲應徵的職位、寫作練習、跟讀練習、角色扮演、AI 回饋與心得反思」串成完整的學習歷程，再由教師進行正式評分與回饋。</p>
+        <p class="lead">這是一套為大學生職場英文課設計的 AI 輔助學習系統。它不是讓學生打開聊天機器人、得到一份漂亮答案就結束，而是把職位探索、內容建構、口語練習、臨場應答、AI 學習回饋、反思與教師正式評量，串成一條可以被學生反覆練習、也能由教師追蹤的完整學習歷程。</p>
+        <div class="intro-summary" aria-label="系統重點">
+          <div class="meta-card"><strong>以真實職位為起點</strong><p>學生先設定想應徵的職位、工作內容與能力需求，再進入後續練習。</p></div>
+          <div class="meta-card"><strong>六階段完整流程</strong><p>寫作、跟讀、角色扮演、AI 回饋與心得不是分散活動，而是彼此銜接。</p></div>
+          <div class="meta-card"><strong>AI 輔助、教師定錨</strong><p>AI 提供練習回饋；正式成績仍由教師依 Rubric 與完整學習證據判斷。</p></div>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="layout" style="grid-template-columns:1fr; width:min(100% - 24px,1100px);">
-    <section class="section">
-      <h2>從「會回答」走向「知道自己為什麼這樣回答」</h2>
-      <p>系統的核心不是替學生產生一份完美答案，而是讓學生在一次又一次練習中，逐步建立自己的英文面試內容、口語表達與臨場應對能力。</p>
-      <p>學生先從自己真正想應徵的職位出發，整理工作內容與能力需求，再進入寫作、跟讀與面試角色扮演。AI 在不同階段提供學習鷹架與回饋，但不直接取代學生思考；練習結束後，學生還要回頭閱讀自己的作答、AI 建議與實際表現，完成反思。</p>
-      <div class="highlight"><strong>系統想做的不是「幫學生把英文改漂亮」</strong><p>而是讓學生最後真的能用自己的英文，把自己的經驗說清楚。</p></div>
-    </section>
+  <div class="intro-layout">
+    <nav class="sidebar" data-spy-nav aria-label="本頁導覽">
+      <p class="title">本頁導覽</p>
+      <a href="#positioning">系統定位</a>
+      <a href="#learning-flow">六階段學習流程</a>
+      <a href="#scaffolding">客製化學習鷹架</a>
+      <a href="#attempts">三次練習設計</a>
+      <a href="#ai-and-teacher">AI 與教師分工</a>
+      <a href="#student-experience">學生端學習體驗</a>
+      <a href="#teacher-workflow">教師與管理端</a>
+      <a href="#assessment">正式評量與證據</a>
+      <a href="#research">研究與教學脈絡</a>
+      <a href="#technology">架構、資料與開源</a>
+    </nav>
 
-    <section class="section">
-      <h2>六個階段，完成一次完整的英文面試練習</h2>
-      <div class="steps">
-        <div class="step-card"><span class="step-mark">1</span><strong>欲應徵的職位</strong><p>設定目標職位、工作內容與需要的能力，作為後續 AI 個人化回饋的背景。</p></div>
-        <div class="step-card"><span class="step-mark">2</span><strong>寫作練習</strong><p>從初稿開始，取得 AI 練習回饋後自行修正，再完成可實際拿來開口說的英文回答。</p></div>
-        <div class="step-card"><span class="step-mark">3</span><strong>跟讀練習</strong><p>系統將學生完成的內容轉成示範語音，學生可以跟讀、錄音，並反覆確認自己的口語表現。</p></div>
-        <div class="step-card"><span class="step-mark">4</span><strong>角色扮演</strong><p>由 AI 扮演面試官，回答核心面試題，並面對臨場追問。</p></div>
-        <div class="step-card"><span class="step-mark">5</span><strong>AI 回饋</strong><p>整理整場練習的優勢與具體改進方向，作為學習參考，不直接取代教師評分。</p></div>
-        <div class="step-card"><span class="step-mark">6</span><strong>心得撰寫</strong><p>學生對照自己的實際回答與 AI 建議完成反思，將問題轉化成下一次練習目標。</p></div>
-      </div>
-    </section>
+    <main class="intro-content">
+      <section class="section" id="positioning">
+        <h2>從「幫學生改英文」走向「讓學生建立自己的面試能力」</h2>
+        <p>系統的核心目標，不是替學生產生一份看起來完美、卻未必能在面試現場說出口的答案。學生必須使用自己的學習、社團、工作、專案或生活經驗回答，並在多次練習中逐步理解：這一題真正想知道什麼、自己的哪段經驗可以作為證據，以及如何把經驗連回目標職位。</p>
+        <p>因此，系統不只處理文法與用字，也把「內容是否具體」「回答是否有組織」「是否連結職位」「能否實際開口表達」「遇到追問如何應對」納入同一條學習路徑。</p>
+        <div class="highlight">
+          <strong>這套系統想做的，不是把學生的英文修得像另一個人。</strong>
+          <p>而是讓學生最後能用自己理解、自己相信、也真的說得出口的英文，把自己的經驗說清楚。</p>
+        </div>
+      </section>
 
-    <section class="section">
-      <h2>介面特色</h2>
-      <div class="feature-grid">
-        <article class="feature"><strong>職位導向的個人化練習</strong><p>學生先建立自己的求職目標，後續寫作建議、角色扮演與 AI 回饋可依職位背景調整。</p></article>
-        <article class="feature"><strong>AI 草稿回饋與建議範文</strong><p>聚焦最值得優先修改的問題，盡量保留學生原意、個人經驗與可實際說出口的語言程度。</p></article>
-        <article class="feature"><strong>文字與示範語音連動</strong><p>跟讀時可以直接從文字定位到對應的示範語音位置，降低反覆從頭尋找單字發音的負擔。</p></article>
-        <article class="feature"><strong>完成後可回顧完整歷程</strong><p>學生可以從作答、錄音、AI 建議與心得中看到自己的進步軌跡，而不是只看到最後的分數。</p></article>
-      </div>
-    </section>
+      <section class="section" id="learning-flow">
+        <h2>六個階段，完成一次完整的英文面試練習</h2>
+        <p>每份作業沿著固定流程前進。前一階段產生的內容會成為下一階段的學習材料，避免寫作、口說、AI 回饋與教師評量彼此斷裂。</p>
+        <div class="flow-detail">
+          <article class="flow-item"><span class="flow-number">1</span><strong>欲應徵的職位</strong><p>設定目標職位、工作內容、需要能力與個人背景，讓後續提示與回饋有真實情境。</p></article>
+          <article class="flow-item"><span class="flow-number">2</span><strong>寫作練習</strong><p>先完成初稿，閱讀 AI 練習回饋後自行修正，再形成可實際拿來口說的最終回答。</p></article>
+          <article class="flow-item"><span class="flow-number">3</span><strong>跟讀練習</strong><p>系統將學生的最終回答轉成示範語音；學生跟讀、錄音並反覆確認發音、節奏與流暢度。</p></article>
+          <article class="flow-item"><span class="flow-number">4</span><strong>角色扮演</strong><p>由 AI 扮演面試官，提出 4 題核心題目與 1 題未預告的臨場追問，練習理解與即時應答。</p></article>
+          <article class="flow-item"><span class="flow-number">5</span><strong>AI 學習回饋</strong><p>整理整場練習的優勢、主要問題與具體改進方向，作為下一次練習參考，不作為正式成績。</p></article>
+          <article class="flow-item"><span class="flow-number">6</span><strong>心得撰寫</strong><p>學生對照自己的作答、錄音與 AI 建議完成反思，將發現的問題轉成下一次可執行的目標。</p></article>
+        </div>
+      </section>
 
-    <section class="section">
-      <h2>系統封面</h2>
-      <div class="figure-grid">
-        <figure class="figure-card">
-          <button type="button" data-zoom-src="/assets/images/ai-english-oral-interview-system-og.png" data-zoom-alt="AI 英文口試練習系統封面">
-            <img src="/assets/images/ai-english-oral-interview-system-og.png" alt="AI 英文口試練習系統封面" loading="lazy">
-          </button>
-          <figcaption class="figure-caption"><strong>系統介紹封面</strong><span>已改成站內圖片路徑，適合直接部署到 Vercel。</span></figcaption>
-        </figure>
-      </div>
-    </section>
-  </main>
+      <section class="section" id="scaffolding">
+        <h2>不是一張通用提示卡，而是每題、每階段都不同的學習鷹架</h2>
+        <p>系統內的核心面試題依學習目的分組。每一題可以有自己的回答順序、證據提醒、自我檢查方向與簡短句首；學生設定目標職位後，系統再依當次題目補上更貼近任務的職位連結、真實經驗回想問題、英文關鍵字與不完整句首。</p>
+        <div class="feature-grid">
+          <article class="feature"><strong>題目層級</strong><p>不同題型有不同教學目的，不再讓所有問題共用同一組泛用建議。</p></article>
+          <article class="feature"><strong>職位層級</strong><p>提示會參考學生真正想應徵的工作，而不是只產生一般性的面試回答。</p></article>
+          <article class="feature"><strong>經驗層級</strong><p>透過回想問題協助學生找到自己的真實經驗，不替學生虛構成就或背景。</p></article>
+          <article class="feature"><strong>階段層級</strong><p>寫作、跟讀與角色扮演關注的重點不同，提示也會隨任務改變。</p></article>
+        </div>
+        <div class="note"><strong>重要原則：</strong>鷹架只幫助學生想清楚「要回答什麼、能使用哪一段真實經驗、如何連回職位」，不直接替學生完成整份答案。個人化提示暫時無法產生時，學生仍可使用每題不同的公版鷹架繼續練習。</div>
+      </section>
 
-  <dialog id="imageModal" class="dialog">
-    <div class="dialog-wrap">
-      <button class="dialog-close" type="button" data-dialog-close>✕ 關閉</button>
-      <img id="modalImage" alt="放大預覽圖">
-    </div>
-  </dialog>
+      <section class="section" id="attempts">
+        <h2>三次練習，逐步撤除協助</h2>
+        <p>系統沒有用統一字數門檻判斷學生是否「做得夠多」，而是透過最多三次提交，逐步把作答責任交還給學生。目標是讓學生從需要提示，走到能自行組織與檢查回答。</p>
+        <div class="attempt-grid">
+          <article class="attempt"><span class="attempt-label">第一次練習</span><strong>看得見完整方向</strong><p>較完整地展開回答方向、句首、證據提醒與職位連結，協助學生建立基本結構。</p></article>
+          <article class="attempt"><span class="attempt-label">第二次練習</span><strong>先自己想，再求助</strong><p>提示預設收起來；學生先自行作答，真的卡住時才重新展開需要的部分。</p></article>
+          <article class="attempt"><span class="attempt-label">第三次練習</span><strong>撤除作答鷹架</strong><p>只保留任務導航與自我檢查，讓學生在較接近真實面試的情況下完成回答。</p></article>
+        </div>
+      </section>
 
-  <footer class="footer">AI 英文口試練習系統 · 系統介紹</footer>
+      <section class="section" id="ai-and-teacher">
+        <h2>AI 提供練習回饋，教師負責正式評量</h2>
+        <p>系統刻意把「AI 學習回饋」與「教師正式成績」分開。AI 適合在練習過程中快速指出問題、提供修改方向與模擬面試情境；但正式評量仍需要教師結合課程目標、學生背景與完整學習證據作出判斷。</p>
+        <div class="role-grid">
+          <article class="role-card">
+            <h3>AI 在系統中的角色</h3>
+            <ul>
+              <li>依學生草稿提供文法、用字、內容與組織建議。</li>
+              <li>模擬面試官並提出核心題目與臨場追問。</li>
+              <li>分析角色扮演結果，整理優勢與可優先改善的問題。</li>
+              <li>提供學習鷹架，但不代替學生完成作業。</li>
+            </ul>
+          </article>
+          <article class="role-card">
+            <h3>教師在系統中的角色</h3>
+            <ul>
+              <li>設定作業、題目、開放時間、提示詞與評分規準。</li>
+              <li>查看學生從準備、修改到口語練習的完整歷程。</li>
+              <li>依 Rubric、錄音、逐字稿、回答內容與心得正式評分。</li>
+              <li>決定補繳、重作與個別協助，不直接以 AI 分析取代專業判斷。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="student-experience">
+        <h2>學生端：把一次作答變成可反覆使用的學習歷程</h2>
+        <div class="check-grid">
+          <div class="check-item"><strong>職位資料可沿用</strong><span>下一份作業可帶入前次職位設定，學生確認或修改後即可繼續。</span></div>
+          <div class="check-item"><strong>草稿回饋保留原意</strong><span>AI 聚焦最值得先修改的問題，建議範文盡量維持學生原本的經驗與程度。</span></div>
+          <div class="check-item"><strong>文字與示範語音連動</strong><span>學生可從文字定位示範語音位置，降低反覆尋找單字發音的負擔。</span></div>
+          <div class="check-item"><strong>核心題目跨階段一致</strong><span>寫作、跟讀與角色扮演使用同一組核心題目，練習內容前後連貫。</span></div>
+          <div class="check-item"><strong>AI 面試官可自然追問</strong><span>除了固定題目，也加入未預告追問，訓練理解與臨場組織能力。</span></div>
+          <div class="check-item"><strong>完成後仍可回顧</strong><span>學生可查看提交紀錄、回答、錄音、AI 建議、心得與教師成績。</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="teacher-workflow">
+        <h2>教師與管理端：從課前設定到正式批改</h2>
+        <p>管理後台不是只有帳號管理，而是把課程執行所需的作業、題目、提示詞、評分規準、學習歷程、補繳／重作與成績匯出整合在同一處。</p>
+        <div class="feature-grid">
+          <article class="feature"><strong>系統總覽與進度掌握</strong><p>查看學生數、作業數、提交紀錄、完成狀態、需要協助者與 API 使用情形。</p></article>
+          <article class="feature"><strong>使用者與班級管理</strong><p>支援搜尋、班級篩選、帳號維護與 XLSX 匯入；實際課程名單可由系統管理者統一處理。</p></article>
+          <article class="feature"><strong>作業與題目管理</strong><p>設定標題、說明、四道核心題目、開放／截止日期與課程執行方式。</p></article>
+          <article class="feature"><strong>AI 提示詞版本管理</strong><p>分別管理寫作回饋、面試官與最終學習回饋，避免課程進行中直接覆蓋舊版本。</p></article>
+          <article class="feature"><strong>批改中心</strong><p>依作業與學生狀態搜尋、篩選，快速找出未開始、練習中、待批改或需要協助的學生。</p></article>
+          <article class="feature"><strong>補繳、重作與成績匯出</strong><p>協調個別期限、開放重新練習，並將正式評分結果匯出為 Excel。</p></article>
+        </div>
+      </section>
+
+      <section class="section" id="assessment">
+        <h2>不只看最後答案，而是保留可追溯的學習證據</h2>
+        <p>教師可以在同一頁查看學生的職位設定、寫作初稿與終稿、AI 練習回饋、跟讀錄音、角色扮演錄音與逐字稿、最終 AI 回饋、心得，以及正式評分。這讓評量不只依賴一次口試結果，也能看見學生如何準備、修正與反思。</p>
+        <div class="evidence-list" aria-label="學習證據">
+          <div class="evidence-item">目標職位、工作內容與能力需求</div>
+          <div class="evidence-item">寫作初稿、AI 建議與學生修訂結果</div>
+          <div class="evidence-item">跟讀錄音與實際口語表現</div>
+          <div class="evidence-item">角色扮演錄音、逐字稿與臨場追問</div>
+          <div class="evidence-item">最終 AI 學習回饋</div>
+          <div class="evidence-item">學生心得、自我診斷與下一步目標</div>
+        </div>
+        <p>正式評分規準可設定不同面向、配分與表現層級，並保留版本。即使日後更新 Rubric，過去的成績仍能追溯到當時使用的評分依據。</p>
+      </section>
+
+      <section class="section" id="research">
+        <h2>研究與教學實踐脈絡</h2>
+        <div class="project-card">
+          <p>本系統原始版本建置於國立雲林科技大學 115 年教育部教學實踐研究計畫脈絡中，服務大三職場英文課程的英文面試訓練。</p>
+          <p><strong>計畫名稱：</strong><br>AI-Assisted English Interview Training Module: Investigating Its Effects on Learners’ Interview Performance and the Reduction of Language Anxiety</p>
+          <p><strong>計畫主持人：</strong>蘇姿文（Tzu-wen Su）</p>
+          <p><strong>系統設計與開發：</strong>洪名琮（Hung Ming-Tsung）</p>
+          <p>教學設計關注的不只是回答正確與否，也包括漸進式學習鷹架、學生對 AI 回饋的運用、口語表現、臨場應對、學習反思，以及學生在反覆練習中的焦慮與自我效能變化。</p>
+        </div>
+      </section>
+
+      <section class="section" id="technology">
+        <h2>技術架構、資料責任與開放原始碼</h2>
+        <p>系統前端由瀏覽器操作，後端使用 FastAPI 提供學生與管理員功能，PostgreSQL 保存學習與管理資料；語音辨識、語言回饋與示範語音分別使用外部 AI 服務，學生錄音則存放於私人 Object Storage。</p>
+        <div class="architecture" aria-label="系統架構">瀏覽器
+  ↓
+FastAPI 應用程式
+  ├─ 學生端 API
+  ├─ 管理端 API
+  ├─ JWT 登入與權限
+  └─ 靜態頁面
+  ↓
+PostgreSQL
+  ├─ AI：語音辨識、語言回饋、語音合成
+  ├─ 私人 Object Storage：學生錄音
+  └─ SMTP：帳號與作業通知</div>
+        <p>系統設有登入防機器人驗證、權限區分、API 使用量限制、錄音長度限制、密碼重設與操作紀錄等機制。原始碼不包含真實學生資料、正式環境憑證、資料庫備份或錄音檔；實際部署者仍需自行負責資料告知、同意、保存、刪除與跨境傳輸等規範。</p>
+        <div class="source-note">
+          本專案依 <strong>Apache License 2.0</strong> 開放原始碼。系統原始碼與部署說明可參考
+          <a href="https://github.com/bridgerhung/oral" target="_blank" rel="noopener noreferrer">github.com/bridgerhung/oral</a>；正式系統入口為
+          <a href="https://oral.brid.pw" target="_blank" rel="noopener noreferrer">oral.brid.pw</a>。
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">AI 英語面試練習系統 · 完整系統介紹 · © 2026 洪名琮</footer>
   <script src="/assets/js/site.js"></script>
 </body>
 </html>
