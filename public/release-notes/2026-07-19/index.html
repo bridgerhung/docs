@@ -48,6 +48,33 @@
     color: #555555;
   }
 
+  .page-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .page-nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border: 1px solid #d4dce2;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #244b63;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .page-nav a:hover {
+    text-decoration: none;
+    filter: brightness(0.98);
+  }
+
   .article-wrap {
     width: min(100% - 32px, 820px);
     margin: 0 auto 56px;
@@ -94,6 +121,13 @@
   <p class="version">2026.07.19 穩定版 v2.0.0</p>
   <h1>AI 職場面試練習系統</h1>
   <p>開發進度暨助教回饋處理說明</p>
+  <div class="page-nav">
+    <a href="/">回首頁</a>
+    <a href="/introduction/">系統介紹</a>
+    <a href="/student-manual/">學生手冊</a>
+    <a href="/admin-manual/">管理手冊</a>
+    <a href="/release-notes/">發布紀錄</a>
+  </div>
 </header>
 
 <main class="article-wrap">

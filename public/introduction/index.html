@@ -16,6 +16,40 @@
   <meta name="twitter:image" content="/assets/images/ai-english-oral-interview-system-og.png">
   <title>AI 英文口試練習系統｜系統介紹</title>
   <link rel="stylesheet" href="/assets/css/site.css">
+  <style>
+    .license {
+      background: #f9fbfb;
+    }
+
+    .source-note {
+      margin-top: 22px;
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: #fff;
+      color: #334248;
+    }
+
+    .source-note p {
+      margin-bottom: 12px;
+    }
+
+    .source-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .source-note .project-name {
+      margin: 18px 0 6px;
+      color: var(--heading);
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .source-link {
+      word-break: break-all;
+      font-weight: 700;
+    }
+  </style>
 </head>
 <body>
   <header class="hero">
@@ -29,6 +63,7 @@
           <a class="button primary" href="/student-manual/">看學生手冊</a>
           <a class="button" href="/admin-manual/">看管理手冊</a>
           <a class="button" href="/release-notes/2026-07-19/">看發布紀錄</a>
+          <a class="button" href="/">回首頁</a>
         </div>
       </div>
     </div>
@@ -37,30 +72,120 @@
   <main class="layout" style="grid-template-columns:1fr; width:min(100% - 24px,1100px);">
     <section class="section">
       <h2>從「會回答」走向「知道自己為什麼這樣回答」</h2>
-      <p>系統的核心不是替學生產生一份完美答案，而是讓學生在一次又一次練習中，逐步建立自己的英文面試內容、口語表達與臨場應對能力。</p>
+      <p>AI 英文口試練習系統的核心，不是替學生產生一份完美答案，而是讓學生在一次又一次練習中，逐步建立自己的英文面試內容、口語表達與臨場應對能力。</p>
       <p>學生先從自己真正想應徵的職位出發，整理工作內容與能力需求，再進入寫作、跟讀與面試角色扮演。AI 在不同階段提供學習鷹架與回饋，但不直接取代學生思考；練習結束後，學生還要回頭閱讀自己的作答、AI 建議與實際表現，完成反思。</p>
-      <div class="highlight"><strong>系統想做的不是「幫學生把英文改漂亮」</strong><p>而是讓學生最後真的能用自己的英文，把自己的經驗說清楚。</p></div>
-    </section>
-
-    <section class="section">
-      <h2>六個階段，完成一次完整的英文面試練習</h2>
-      <div class="steps">
-        <div class="step-card"><span class="step-mark">1</span><strong>欲應徵的職位</strong><p>設定目標職位、工作內容與需要的能力，作為後續 AI 個人化回饋的背景。</p></div>
-        <div class="step-card"><span class="step-mark">2</span><strong>寫作練習</strong><p>從初稿開始，取得 AI 練習回饋後自行修正，再完成可實際拿來開口說的英文回答。</p></div>
-        <div class="step-card"><span class="step-mark">3</span><strong>跟讀練習</strong><p>系統將學生完成的內容轉成示範語音，學生可以跟讀、錄音，並反覆確認自己的口語表現。</p></div>
-        <div class="step-card"><span class="step-mark">4</span><strong>角色扮演</strong><p>由 AI 扮演面試官，回答核心面試題，並面對臨場追問。</p></div>
-        <div class="step-card"><span class="step-mark">5</span><strong>AI 回饋</strong><p>整理整場練習的優勢與具體改進方向，作為學習參考，不直接取代教師評分。</p></div>
-        <div class="step-card"><span class="step-mark">6</span><strong>心得撰寫</strong><p>學生對照自己的實際回答與 AI 建議完成反思，將問題轉化成下一次練習目標。</p></div>
+      <div class="highlight">
+        <strong>系統想做的不是「幫學生把英文改漂亮」</strong>
+        <p>而是讓學生最後真的能用自己的英文，把自己的經驗說清楚。</p>
       </div>
     </section>
 
     <section class="section">
-      <h2>介面特色</h2>
+      <h2>六個階段，完成一次完整的英文面試練習</h2>
+      <p>每份作業都沿著相同的學習路徑前進，讓準備、練習、回饋與反思彼此連結，而不是分散成彼此無關的活動。</p>
+      <div class="steps">
+        <div class="step-card"><span class="step-mark">1</span><strong>欲應徵的職位</strong><p>設定目標職位、工作內容與需要的能力，作為後續 AI 個人化回饋與角色扮演的背景。</p></div>
+        <div class="step-card"><span class="step-mark">2</span><strong>寫作練習</strong><p>從初稿開始，取得 AI 練習回饋後自行修正，再完成可實際拿來開口說的英文回答。</p></div>
+        <div class="step-card"><span class="step-mark">3</span><strong>跟讀練習</strong><p>系統將學生完成的內容轉成示範語音，學生可以跟讀、錄音，並反覆確認自己的口語表現。</p></div>
+        <div class="step-card"><span class="step-mark">4</span><strong>角色扮演</strong><p>由 AI 扮演面試官，回答 4 題核心面試題，並面對 1 題未預告的臨場追問。</p></div>
+        <div class="step-card"><span class="step-mark">5</span><strong>AI 回饋</strong><p>整理整場練習的優勢與具體改進方向。AI 回饋作為學習參考，不直接取代教師正式成績。</p></div>
+        <div class="step-card"><span class="step-mark">6</span><strong>心得撰寫</strong><p>學生對照自己的實際回答與 AI 建議完成反思，將「知道問題」轉化成下一次練習的目標。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>不是一張通用提示卡，而是依題目與職位建立學習鷹架</h2>
+      <p>系統將英文面試練習拆成不同題型與學習目的。每道題目可以有自己的回答順序、證據提醒與自我檢查方向，再依學生設定的目標職位，補上更貼近當次任務的職位連結、真實經驗回想與英文關鍵字。</p>
+      <p>這些提示的目的，是幫學生想清楚「我要回答什麼」、「我可以使用哪一段自己的經驗」以及「這段經驗如何和應徵職位連起來」，而不是直接替學生寫完一篇答案。</p>
+      <div class="highlight">
+        <strong>逐步撤除協助：</strong>
+        <p>系統可讓學生在多次練習中逐漸減少提示，把作答責任慢慢交回學生自己。目標不是要求學生把字數湊滿，而是希望到了後面的練習，他比第一次更知道自己真正想說什麼。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>學生端：把練習做成真正可以反覆使用的學習歷程</h2>
       <div class="feature-grid">
         <article class="feature"><strong>職位導向的個人化練習</strong><p>學生先建立自己的求職目標，後續寫作建議、角色扮演與 AI 回饋可依職位背景調整。</p></article>
         <article class="feature"><strong>AI 草稿回饋與建議範文</strong><p>聚焦最值得優先修改的問題，盡量保留學生原意、個人經驗與可實際說出口的語言程度。</p></article>
         <article class="feature"><strong>文字與示範語音連動</strong><p>跟讀時可以直接從文字定位到對應的示範語音位置，降低反覆從頭尋找單字發音的負擔。</p></article>
-        <article class="feature"><strong>完成後可回顧完整歷程</strong><p>學生可以從作答、錄音、AI 建議與心得中看到自己的進步軌跡，而不是只看到最後的分數。</p></article>
+        <article class="feature"><strong>AI 面試官與臨場追問</strong><p>除了固定核心題目，也加入未預告追問，讓學生練習理解問題與即時組織回答，而不只是背稿。</p></article>
+        <article class="feature"><strong>心得自動儲存與反思</strong><p>學生撰寫心得時可重新看到 AI 改進建議，內容自動保存，降低網路中斷或誤關頁面的風險。</p></article>
+        <article class="feature"><strong>多次提交與成果回顧</strong><p>系統預設五份主題作業，每份最多可提交三次；學生可回看已完成成果、正式提交與教師評分。</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>教師端：不只看最後答案，也看得到學生如何走到最後</h2>
+      <p>教師可以管理作業開放與截止時間，查看學生從職位設定、草稿、AI 練習回饋、終稿、跟讀錄音、角色扮演逐字稿、最終 AI 回饋到心得反思的完整歷程，再依正式評分規準進行批改。</p>
+      <div class="feature-grid">
+        <article class="feature"><strong>完整學習歷程檢視</strong><p>把原本散落在不同階段的學習證據集中呈現，教師可以看見學生如何準備、修改與反思。</p></article>
+        <article class="feature"><strong>正式評分與規準版本管理</strong><p>AI 回饋與教師成績分開處理；評分規準可保留版本，避免後續修改標準影響既有評分依據。</p></article>
+        <article class="feature"><strong>Excel 成績匯出</strong><p>作業成績可匯出為 Excel，方便教師進一步整理、備份或登錄正式成績。</p></article>
+        <article class="feature"><strong>必要的操作紀錄</strong><p>可保留部分練習過程紀錄供教師需要時檢視，但不以單一操作事件直接判定學生作弊。</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>五個主題，從自我介紹一路練到企業與未來規劃</h2>
+      <p>系統預設五份作業主題，涵蓋個人背景、技能與成就、情境與問題解決、工作態度，以及公司認識與未來規劃。每份作業沿用同一套六階段流程，讓學生可以把注意力放在內容與表達能力的累積，而不必每次重新理解操作方式。</p>
+      <div class="card-grid">
+        <div class="meta-card"><strong>Assignments</strong><p>預設 5 份主題作業</p></div>
+        <div class="meta-card"><strong>Practice</strong><p>每份最多提交 3 次</p></div>
+        <div class="meta-card"><strong>Interview</strong><p>4 題核心題＋1 題追問</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>系統架構</h2>
+      <p>專案採用 FastAPI 與 PostgreSQL 建置後端與資料儲存，前端以網頁形式提供學生與管理端操作。AI 功能目前整合語音辨識、文字生成回饋與語音合成，錄音檔則可使用 S3 相容物件儲存服務保存。</p>
+      <div class="highlight">
+        <pre style="margin:0; white-space:pre-wrap; font-family:Consolas, monospace; color:#2d3d45;">瀏覽器（Bootstrap 5）
+        │
+FastAPI（Web / API）
+  ├── /api/auth/*      登入與身分驗證
+  ├── /api/student/*   學生學習功能
+  ├── /api/admin/*     教師／管理端功能
+  └── static/          前端頁面
+        │
+PostgreSQL
+  ├── OpenAI（語音辨識 / AI 回饋 / 語音合成）
+  ├── S3 相容物件儲存（學生錄音）
+  └── SMTP（系統通知信）</pre>
+      </div>
+      <p class="small" style="margin-top:14px; color:#6b757a;">目前公開文件提供 OCI ARM VM、Oracle Object Storage、Cloudflare Turnstile、OpenAI API 與 SMTP 的部署範例；這些外部服務不是 Apache License 2.0 授權內容，也不代表系統只能使用特定供應商。</p>
+    </section>
+
+    <section class="section">
+      <h2>安全、資料與部署責任</h2>
+      <p>開源版本不包含真實學生資料或可直接使用的服務憑證。部署者必須自行設定 API 金鑰、資料庫密碼、SMTP、物件儲存與其他外部服務，並自行負責學生資料的告知、同意、保存、刪除與可能涉及的跨境傳輸規範。</p>
+      <p>系統也提供 API 使用量與錄音長度限制的設定，降低外部 AI 服務遭濫用的風險；開發與測試文件則明確要求，不應將真實學生資料、環境變數、資料庫備份、匯出檔或錄音提交到版本控制。</p>
+    </section>
+
+    <section class="section license">
+      <h2>開放原始碼</h2>
+      <p>AI 英文口試練習系統以 <strong>Apache License 2.0</strong> 開放原始碼。除非個別檔案另有標示，repository 中的原始碼與文件均依該授權提供；第三方套件、基底映像、遠端資產與外部服務仍適用其各自的授權與使用條款。</p>
+      <p>專案同時提供貢獻指南、安全弱點通報方式、社群互動規範、第三方元件說明與公開發布檢查文件，希望讓後續使用者不只「拿得到程式」，也有一套可以理解、部署與繼續維護的基礎。</p>
+
+      <div class="source-note" lang="en">
+        <p>If you need to consult the technical documentation, you may refer to the source code, which has just completed a security audit.</p>
+        <p class="source-link"><a href="https://github.com/bridgerhung/oral" target="_blank" rel="noopener">https://github.com/bridgerhung/oral</a></p>
+
+        <p>This project is released as open-source software under the Apache License 2.0.</p>
+
+        <p class="project-name">AI English Oral Interview Practice System</p>
+        <p>Copyright © 2026 Hung Ming-Tsung</p>
+
+        <p>This software was originally developed as part of a Teaching Practice Research Project funded by the Ministry of Education, Republic of China (Taiwan):</p>
+
+        <p><strong>“AI-Assisted English Interview Training Module:<br>
+        Investigating Its Effects on Learners’ Interview Performance<br>
+        and the Reduction of Language Anxiety”</strong></p>
+
+        <p><strong>Principal Investigator:</strong><br>
+        Tzu-wen Su</p>
+
+        <p>National Yunlin University of Science and Technology</p>
       </div>
     </section>
 
