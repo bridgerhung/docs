@@ -16,6 +16,14 @@
   <meta name="twitter:image" content="/assets/images/20260720-og-img.png">
   <title>AI 英語面試練習系統｜發布紀錄</title>
   <link rel="stylesheet" href="/assets/css/site.css">
+  <style>
+    .release-tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:0 0 20px}
+    .release-search{width:min(100%,360px);padding:11px 13px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--text);font:inherit}
+    .release-status{color:#607078;font-size:14px;font-weight:750}
+    .release-card{display:flex;flex-direction:column;gap:12px}
+    .release-card h2{margin:0;font-size:22px}.release-card p{margin:0 0 6px}.release-card .button{align-self:flex-start;margin-top:auto}
+    .release-card__meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;color:#607078;font-size:13px;font-weight:750}
+  </style>
 </head>
 <body>
   <header class="hero">
@@ -24,9 +32,9 @@
         <span class="badge">發布紀錄</span>
         <h1>AI 英語面試練習系統</h1>
         <p class="subtitle">release-notes</p>
-        <p class="lead">這裡整理每次穩定版更新內容。</p>
+        <p class="lead">這裡整理每次穩定版更新、開發紀事與重要公告。每篇 HTML 可自由設計，索引由資料檔自動整理。</p>
         <div class="hero-actions">
-          <a class="button primary" href="/release-notes/2026-07-19/">最新版本：2026-07-19</a>
+          <a class="button primary" id="latestReleaseButton" href="#releaseList">載入最新版本中…</a>
           <a class="button" href="/">回首頁</a>
         </div>
       </div>
@@ -35,18 +43,24 @@
 
   <main class="layout" style="grid-template-columns:1fr; width:min(100% - 24px,1180px);">
     <section class="section">
-      <h2>版本列表</h2>
-      <div class="card-grid">
-        <article class="card">
-          <strong>2026-07-19 穩定版</strong>
-          <p>完成學生流程、管理後台與成績匯出整理，適合直接部署到 Vercel 的版本。</p>
-          <a class="button primary" href="/release-notes/2026-07-19/">查看公告</a>
-        </article>
+      <div class="release-tools">
+        <div>
+          <h2 style="margin-bottom:4px">版本列表</h2>
+          <div class="release-status" id="releaseStatus">正在載入發布紀錄…</div>
+        </div>
+        <label>
+          <span class="visually-hidden">搜尋發布紀錄</span>
+          <input class="release-search" id="releaseSearch" type="search" placeholder="搜尋日期、版本或內容">
+        </label>
+      </div>
+      <div class="card-grid" id="releaseList" aria-live="polite">
+        <p class="note">正在載入發布紀錄…</p>
       </div>
     </section>
   </main>
 
   <footer class="footer">© 2026 洪名琮</footer>
   <script src="/assets/js/site.js"></script>
+  <script src="/release-notes/index.js"></script>
 </body>
 </html>
