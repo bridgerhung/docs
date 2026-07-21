@@ -6,6 +6,7 @@
     { href: '/introduction/', label: '系統介紹' },
     { href: '/student-manual/', label: '學生手冊' },
     { href: '/admin-manual/', label: '管理手冊' },
+    { href: '/legal/', label: '規範與個資' },
     { href: '/release-notes/', label: '發布紀錄' }
   ];
 
