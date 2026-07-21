@@ -80,7 +80,7 @@
     if (!researchCard) return;
 
     researchCard.innerHTML = `
-      <p>本系統原始版本係於中華民國（臺灣）教育部教學實踐研究計畫支持下，為國立雲林科技大學職場英文課程所開發。</p>
+      <p>本系統原始版本係於中華民國教育部教學實踐研究計畫支持下，為國立雲林科技大學職場英文課程所開發。</p>
 
       <div class="project-details" aria-label="研究計畫資訊">
         <p class="project-detail project-detail--wide"><strong>計畫名稱</strong>「AI 輔助之英文面試訓練模組 --探討其對學習者面試表現提昇與語言焦慮降低的影響」</p>
