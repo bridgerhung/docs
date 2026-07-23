@@ -260,14 +260,14 @@
 
       <section class="section" id="technology">
         <h2>技術架構、資料責任與開放原始碼</h2>
-        <p>系統前端由瀏覽器操作，後端使用 FastAPI 提供學生、教師與管理功能。PostgreSQL 保存帳號、作業、學習歷程與評分；外部 AI API 處理語音辨識、文字回饋與示範語音，學生錄音則存放於私人 Object Storage。部署時也可啟用不保存業務資料的音訊工作服務，分擔轉檔與語音工作；服務無法使用時由主應用程式接手。</p>
+        <p>系統前端由瀏覽器操作，後端使用 FastAPI 提供學生、教師與管理功能。PostgreSQL 保存帳號、作業、學習歷程與評分；外部 AI API 處理語音辨識、文字回饋與示範語音，學生錄音則存放於私有 Object Storage。部署時也可啟用不保存業務資料的音訊工作服務，分擔轉檔與語音工作；服務無法使用時由主應用程式接手。</p>
         <div class="architecture" aria-label="系統架構">瀏覽器（學生／教師／管理員）
   │
   ▼
 FastAPI 應用程式（登入、權限、學生端與管理端 API）
   ├─ PostgreSQL：帳號、作業、學習歷程與評分
   ├─ AI API：語音辨識、文字回饋與語音合成
-  ├─ 私人 Object Storage：學生錄音
+  ├─ 私有 Object Storage：學生錄音
   ├─ SMTP：帳號與作業通知
   ├─ Cloudflare Turnstile：登入人機驗證
   └─ 可選音訊工作服務：無狀態轉檔與語音工作</div>
