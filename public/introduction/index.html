@@ -44,11 +44,14 @@
     .architecture{margin-top:18px;padding:18px 20px;border:1px solid #c9dbea;border-radius:14px;background:var(--secondary-soft);color:#314866;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;line-height:1.75;overflow-x:auto;white-space:pre}
     .project-card{padding:22px;border:1px solid var(--line);border-radius:16px;background:#fff}
     .project-card p:last-child{margin-bottom:0}
-    .project-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;margin:20px 0 0;padding:18px;border:1px solid var(--line);border-radius:14px;background:#f8faf9}
+    .project-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 26px;margin:20px 0 0;padding:20px 22px;border:1px solid var(--line);border-radius:14px;background:#f8faf9}
     .project-detail{margin:0!important;color:#40535b}
-    .project-detail strong{display:block;margin-bottom:4px;color:#29404a}
+    .project-detail strong{display:block;margin-bottom:7px;color:#29404a}
     .project-detail--wide{grid-column:1/-1}
-    .project-title-en{display:block;margin-top:6px;color:#526168;font-weight:600;line-height:1.55}
+    .project-label-en{margin-left:5px;color:#708078;font-size:12px;font-weight:600}
+    .project-title-en{display:block;margin-top:8px;color:#617077;font-size:14px;font-weight:400;line-height:1.55}
+    .project-value-en{color:#617077}
+    .project-school-en{display:block;margin-top:4px;color:#617077;font-size:14px}
     .research-basis{margin-top:20px}
     .research-basis a{font-weight:800}
     .research-evolution{width:100%;margin:18px 0;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
@@ -216,10 +219,10 @@
         <div class="project-card">
           <p>本系統源自教育部 115 年教學實踐研究計畫，供國立雲林科技大學大三職場英文課程進行英文面試訓練。計畫書中的「AI 輔助之英文面試訓練模組」就是本系統最初的教學架構。</p>
           <div class="project-details" aria-label="研究計畫資訊">
-            <p class="project-detail project-detail--wide"><strong>計畫名稱 / Project Title</strong>「AI 輔助之英文面試訓練模組 --探討其對學習者面試表現提昇與語言焦慮降低的影響」<span class="project-title-en" lang="en">AI-Assisted English Interview Training Module: Investigating Its Effects on Learners’ Interview Performance and the Reduction of Language Anxiety</span></p>
-            <p class="project-detail"><strong>計畫主持人 / Principal Investigator</strong>蘇姿文 Tzu-Wen Su</p>
-            <p class="project-detail"><strong>系統設計與開發 / System Design and Development</strong>洪名琮 Ming-Tsung Hung</p>
-            <p class="project-detail project-detail--wide"><strong>執行學校 / Institution</strong>國立雲林科技大學 / National Yunlin University of Science and Technology</p>
+            <p class="project-detail project-detail--wide"><strong>計畫名稱 <span class="project-label-en" lang="en">Project Title</span></strong>「AI 輔助之英文面試訓練模組 --探討其對學習者面試表現提昇與語言焦慮降低的影響」<span class="project-title-en" lang="en">AI-Assisted English Interview Training Module: Investigating Its Effects on Learners’ Interview Performance and the Reduction of Language Anxiety</span></p>
+            <p class="project-detail"><strong>計畫主持人 <span class="project-label-en" lang="en">Principal Investigator</span></strong>蘇姿文 <span class="project-value-en" lang="en">(Tzu-Wen Su)</span></p>
+            <p class="project-detail"><strong>系統設計與開發 <span class="project-label-en" lang="en">System Design and Development</span></strong>洪名琮 <span class="project-value-en" lang="en">(Ming-Tsung Hung)</span></p>
+            <p class="project-detail project-detail--wide"><strong>執行學校 <span class="project-label-en" lang="en">Institution</span></strong>國立雲林科技大學<span class="project-school-en" lang="en">National Yunlin University of Science and Technology</span></p>
           </div>
           <p>課程會觀察學生的職場語用、回饋運用、口語表現、臨場應對與學習反思。研究參與另依研究倫理與知情同意程序辦理；使用系統不等於同意參與研究。</p>
         </div>
