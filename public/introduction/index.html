@@ -54,10 +54,17 @@
     .project-title-en{margin:16px 0;padding:16px 18px;border-left:4px solid var(--primary);border-radius:0 12px 12px 0;background:#f3f8f5;color:#29404a;font-weight:700;line-height:1.75}
     .research-basis{margin-top:20px}
     .research-basis a{font-weight:800}
+    .research-evolution{width:100%;margin:18px 0;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+    .research-evolution th,.research-evolution td{padding:13px 15px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+    .research-evolution th{background:#f3f8f5;color:#29404a;font-size:14px}
+    .research-evolution th:first-child,.research-evolution td:first-child{width:165px;font-weight:800;color:#29404a}
+    .research-evolution tr:last-child td{border-bottom:0}
+    .research-evolution td{color:#526168;font-size:14px}
+    .research-boundary{margin-top:18px;padding:18px 20px;border-left:4px solid var(--secondary);border-radius:0 13px 13px 0;background:var(--secondary-soft);color:#40536a}
     .source-note{margin-top:18px;padding:18px 20px;border-left:4px solid var(--primary);border-radius:0 13px 13px 0;background:#f7faf8;color:#425159}
     .source-note a{font-weight:800;word-break:break-all}
     @media(max-width:980px){.intro-layout{grid-template-columns:1fr}.intro-layout .sidebar{display:none}.intro-summary,.attempt-grid{grid-template-columns:1fr}.flow-detail,.role-grid,.evidence-list,.project-details{grid-template-columns:1fr}.project-detail--wide{grid-column:auto}}
-    @media(max-width:640px){.intro-layout{width:min(100% - 14px,1220px);margin-top:15px}.intro-summary{gap:10px}.architecture{font-size:12px}}
+    @media(max-width:640px){.intro-layout{width:min(100% - 14px,1220px);margin-top:15px}.intro-summary{gap:10px}.architecture{font-size:12px}.research-evolution,.research-evolution tbody,.research-evolution tr,.research-evolution th,.research-evolution td{display:block}.research-evolution thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.research-evolution tr{padding:12px 14px;border-bottom:1px solid var(--line)}.research-evolution tr:last-child{border-bottom:0}.research-evolution td,.research-evolution th{width:auto!important;padding:0;border:0}.research-evolution td:first-child{margin-bottom:5px}.research-evolution td:last-child{font-size:13px}}
   </style>
   <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </head>
@@ -210,7 +217,7 @@
       <section class="section" id="research">
         <h2>研究計畫與教學背景</h2>
         <div class="project-card">
-          <p>本系統源自教育部 115 年教學實踐研究計畫，開發目的是協助國立雲林科技大學大三職場英文課程的學生進行英文面試訓練。</p>
+          <p>本系統源自教育部 115 年教學實踐研究計畫，開發目的是協助國立雲林科技大學大三職場英文課程的學生進行英文面試訓練。計畫書所稱的「AI 輔助之英文面試訓練模組」，構成本系統的原始教學核心。</p>
           <div class="project-details" aria-label="研究計畫資訊">
             <p class="project-detail project-detail--wide"><strong>計畫名稱</strong>「AI 輔助之英文面試訓練模組 --探討其對學習者面試表現提昇與語言焦慮降低的影響」</p>
             <p class="project-detail"><strong>計畫主持人</strong>蘇姿文（Tzu-Wen Su）</p>
@@ -227,13 +234,34 @@
           </div>
         </div>
         <div class="research-basis">
-          <h3>設計所參考的研究方向</h3>
+          <h3>從計畫書的七階段模組，到本系統的六個操作區段</h3>
+          <p>計畫書原先以 ChatGPT、學習單與 TronClass 組成七階段語言產出循環。本系統在實作過程中，經教學團隊依課程執行、學生操作與學習歷程保存需求進一步整合與擴充，將原本分散的活動集中於同一平台。因此，目前介面不是計畫書七階段的逐字翻版，而是以原始模組為核心發展出的系統化版本。</p>
+          <table class="research-evolution">
+            <thead>
+              <tr><th scope="col">本系統區段</th><th scope="col">與計畫書的關係</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>欲應徵的職位</td><td>計畫書七階段之外的新增前置區段。經教學團隊討論後加入，讓學生先建立目標職位、工作內容與能力需求，供後續提示與回饋使用。</td></tr>
+              <tr><td>寫作練習</td><td>整合計畫書的 Draft 1、ChatGPT 回饋與語言分析、Final Draft 三個階段；保留學生先獨立產出、閱讀建議後自行判斷與修訂的責任。</td></tr>
+              <tr><td>跟讀練習</td><td>承接計畫書的 Shadowing 階段，將學生的最終文字稿轉為示範語音，並保存學生實際跟讀的錄音。</td></tr>
+              <tr><td>角色扮演</td><td>承接計畫書的 AI 面試官互動；完成四題核心題後再提出一題未預告追問，則是本系統後續深化的臨場應答設計。</td></tr>
+              <tr><td>AI 學習回饋</td><td>承接計畫書的口語表現診斷與改進建議；本系統進一步將它定位為形成性學習資源，不直接作為正式成績。</td></tr>
+              <tr><td>心得撰寫</td><td>計畫書原本已有 Reflection，作為七階段學習單的最後一欄。經教學團隊討論後，本系統將它深化為獨立區段，以五題引導學生整理證據、自我診斷並提出下一步行動。</td></tr>
+            </tbody>
+          </table>
+
+          <h3>系統化後新增的支持</h3>
+          <p>除了把七階段核心流程整合到同一平台，本系統也保存草稿、修訂稿、錄音、逐字稿、AI 回饋、心得與教師評量，形成可回顧、可追溯的學習歷程。後續設計另加入職位個人化提示、未預告追問、最多三次完整練習與逐次減少作答提示；AI 提供練習中的形成性回饋，教師則依課程目標與完整學習證據負責正式評量。</p>
+
+          <h3>計畫書中的理論主線</h3>
+          <p>下列文獻均來自計畫書既有的理論與參考文獻，用於交代訓練模組的設計脈絡，不是本系統成效的直接證據。</p>
           <ul>
-            <li><a href="https://eric.ed.gov/?id=EJ930364" target="_blank" rel="noopener noreferrer">職場面試中的語用教學</a>：研究透過模擬面試、教學前後錄影比較與具體語用能力評分，探討第二語言學習者的面試語用表現。</li>
-            <li><a href="https://eric.ed.gov/?id=EJ1307220" target="_blank" rel="noopener noreferrer">個人化面試回饋與語用訓練</a>：研究比較個人化面試技巧回饋、搭配語用訓練及未接受訓練等不同條件下的面試表現。</li>
-            <li><a href="https://link.springer.com/article/10.1007/s10648-010-9127-6" target="_blank" rel="noopener noreferrer">教學鷹架</a>：研究指出，鷹架應配合學習者當下的能力調整，並隨學習進展逐步撤除，將作答責任轉回學習者。</li>
-            <li><a href="https://journals.sagepub.com/doi/10.3102/003465430298487" target="_blank" rel="noopener noreferrer">促進學習的回饋</a>：有效回饋應幫助學習者理解學習目標、目前表現與接下來可以採取的行動。</li>
+            <li><strong>社會文化理論與引導參與：</strong>學習者在教師與工具支持下完成尚無法獨立完成的任務，再逐步將外在引導轉化為自己的能力。本系統據此安排教師課堂指導、每題作答提示、AI 互動與逐次減少提示；AI 是輔助工具，不取代教師。參考 <a href="https://search.worldcat.org/title/mind-in-society-the-development-of-higher-psychological-processes/oclc/318237423" target="_blank" rel="noopener noreferrer">Vygotsky（1978）</a>、<a href="https://www.routledge.com/Sociocultural-Theory-and-the-Pedagogical-Imperative-in-L2-Education-Vygotskian/Lantolf-Poehner/p/book/9780415894180" target="_blank" rel="noopener noreferrer">Lantolf 與 Poehner（2014）</a>。</li>
+            <li><strong>輸出假說：</strong>語言學習不只需要閱讀範例或觀看示範，也需要實際產出、察覺表達缺口、修正並再次嘗試。本系統將「產出—回饋—修正—再產出」落實為初稿、AI 建議、自主修訂、跟讀、角色扮演、回饋與反思。參考 <a href="https://eric.ed.gov/?id=EJ479541" target="_blank" rel="noopener noreferrer">Swain（1993）</a>、Swain（1995、2005）。</li>
+            <li><strong>外語口說焦慮：</strong>面試中的溝通畏懼、負面評價擔憂與臨場壓力可能妨礙語言輸出，因此系統提供可重複、風險較低的課後練習環境。能否實際降低本課程學生的面試焦慮，是本計畫要檢驗的研究問題，不能由系統功能本身預先宣稱。參考 <a href="https://doi.org/10.1111/j.1540-4781.1986.tb05256.x" target="_blank" rel="noopener noreferrer">Horwitz、Horwitz 與 Cope（1986）</a>、<a href="https://www.nature.com/articles/s41599-025-05550-z" target="_blank" rel="noopener noreferrer">Ding 與 Yusof（2025）</a>。</li>
+            <li><strong>AI 輔助語言學習：</strong>計畫書所引用的研究提供 AI 口說練習、個人化回饋與自主學習的教學依據，也提醒教師留意輸出可靠性、學術誠信與人的判斷。本系統因此把 AI 定位為練習與回饋工具，正式評量仍由教師負責。參考 <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2023.1255594/full" target="_blank" rel="noopener noreferrer">Qiao 與 Zhao（2023）</a>、<a href="https://eric.ed.gov/?id=EJ1409872" target="_blank" rel="noopener noreferrer">Kostka 與 Toncelli（2023）</a>。</li>
           </ul>
+          <div class="research-boundary"><strong>研究界線：</strong>「提升英文面試表現」與「降低英文面試焦慮」是本計畫要檢驗的研究問題，不是系統上線即可成立的成果。本系統的實際成效仍須由計畫規劃的前後測、焦慮問卷與學生回饋資料進行分析；使用本系統也不等於同意參與研究。</div>
         </div>
       </section>
 
